@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>Cimine chose-gpt</title>
+  <link rel="icon" href="data:,">
+  <!-- STYLES -->
+</head>
+<body>
+  <main id="app" aria-label="Cinema seat selection">
+    <canvas id="theater" tabindex="-1" aria-label="Auditorium view. Drag horizontally or use the arrow keys to look around."></canvas>
+    <div id="shade"></div>
+    <div id="stage"><div id="map" aria-label="Seat map"></div></div>
+    <header id="show">
+      <h1>Avengers: Doomsday</h1>
+      <p>Fri 18 Dec · 20:30 · Hall 3</p>
+    </header>
+    <div id="tickets" aria-label="Ticket quantity">
+      <button type="button" id="minus" aria-label="Remove one ticket"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
+      <span id="count">2 tickets</span>
+      <button type="button" id="plus" aria-label="Add one ticket"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+    </div>
+    <section id="checkout" aria-label="Selected seats">
+      <div id="mini" role="group" aria-label="View from a selected seat" inert></div>
+      <div class="purchase-info"><strong id="summary" aria-live="polite">Row G · Seats 9–10</strong><span id="price">2 × €12.00</span></div>
+      <div class="actions">
+        <button id="preview" type="button">
+          <svg viewBox="0 0 24 24" class="cube-icon" aria-hidden="true"><path d="m12 2.8 8.5 4.9v8.7L12 21.3l-8.5-4.9V7.7zM3.9 7.8l8.1 4.7 8.1-4.7M12 12.5v8.2"/></svg>
+          <svg viewBox="0 0 24 24" class="seats-icon" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.7"/><rect x="14" y="3" width="7" height="7" rx="1.7"/><rect x="3" y="14" width="7" height="7" rx="1.7"/><rect x="14" y="14" width="7" height="7" rx="1.7"/></svg>
+          <span id="mode-label">Preview</span>
+        </button>
+        <button type="button" id="book">Book seats · €24.00</button>
+      </div>
+    </section>
+    <div id="notice" role="status"></div>
+    <dialog id="receipt">
+      <div class="stub-top"><span>HALL 3</span><span>ADMISSION</span></div>
+      <h2>Avengers: Doomsday</h2><p>Fri 18 Dec · 20:30</p>
+      <div class="ticket-details"><div><small>ROW</small><b id="book-row"></b></div><div><small>SEATS</small><b id="book-numbers"></b></div><div><small>TOTAL</small><b id="book-total"></b></div></div>
+      <p class="demo-label">Demo ticket · No payment taken</p>
+      <form method="dialog"><button>Done</button></form>
+    </dialog>
+  </main>
+  <!-- APP -->
+</body>
+</html>
